@@ -39,7 +39,7 @@ namespace Discount.API.Repositories
                 _configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
             var affected = await connection.ExecuteAsync(
-                "INSERT INTO Coupon (ProductName, Description, Amount) VALUES (@ProductName, @Description, @Amount",
+                "INSERT INTO Coupon (ProductName, Description, Amount) VALUES (@ProductName, @Description, @Amount)",
                 new { coupon.ProductName, coupon.Description, coupon.Amount });
 
             return affected != 0;
